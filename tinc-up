@@ -1,0 +1,4 @@
+#!/bin/bash
+# Must change X.X with your assigned IP
+ifconfig $INTERFACE 10.128.X.X netmask 255.255.0.0
+

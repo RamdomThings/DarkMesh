@@ -1,0 +1,21 @@
+Address=willard.millaguie.net
+Cipher=blowfish
+Compression=0
+Digest=sha1
+IndirectData=no
+Port=6669
+Subnet=10.128.0.2/32
+TCPOnly = yes
+-----BEGIN RSA PUBLIC KEY-----
+MIICCgKCAgEAvAueuvfviv4ynlrCMN2vs19X7fQ+/clWOvJFHJQBUyErFl/5FD5w
+dCawIMolc6XKuPjtPcRGmG1NIPucHx2p70+PINw5mS1qbPgsy0DQtaqv+gNAI39R
+kqEQWv7HfpvpesuOhwna5+suAStikoOpem3G+ja9q/r/2OLW6E8f92pKfp8BDST5
+JH3BSu8Vjdv5KbV81+my9OhMIpxZhUNe1Bmi9NXe9dWtyHg/XS5PsRMPz6fanMsh
+tqqtWgn7r+DiFsV5lA7ANyEQUjDTL+wXWuV45uAA3PoCrgMQ6Ud+NtcF54Hxjw1o
+hMRZKxnUgySEW4KWvqcRL4J2vzs/0/Pg19mT+mvPaNFQ/CtNKRtNz07oQtAUQu71
+ovihVtJ1yXYIhTaNit5PT7ONSb664gUuthG940yqy8dfM67NnP3c1FhkXwoCJ5we
+LXnFGTdlrJG6I9GlI2zrBrGHQiUGABw7bJTdOZ+ajuu2MeEeMS1XuLKQXZB/o7IU
+ZFu6DtMBBd3+fLMHzNIlv/CuRKqDIF/S2SCwGrOp83Ii7h0/7MrHCfKUL49fDl/4
+AgZ2Hjw/tCiEKcuxaEUUId/r20slrCDZaz1yLNfRJWCGx3dgKGReo6QoNvdyfleg
+4DqwsOUrBOfwCTs3x8dDCZ5YhWeR66BoBKeVQob8MyaauWAOp3aEqcMCAwEAAQ==
+-----END RSA PUBLIC KEY-----

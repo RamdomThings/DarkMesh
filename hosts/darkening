@@ -1,0 +1,21 @@
+Address=darkening.darkme.sh
+Cipher=blowfish
+Compression=0
+Digest=sha1
+IndirectData=no
+Port=6669
+Subnet=10.128.254.0/24
+TCPonly=yes
+-----BEGIN RSA PUBLIC KEY-----
+MIICCgKCAgEAx00WFIR0h3mWpgtm8ihdFnX5YAfAMLPoAl3LVn4X3CS6k3+cD+pW
+/zLLPtfApdYw8CjJPyC7o+ISfxiWuC2FcMO/S7YaHEFI23xttQx0lkZUqG0hZNyk
+qR7m4jWQTtwA8VGWh/m6n69qEIsWdLH9S20t5LVnA9Q4/xx40ioxhjL1zfkoNFNr
+I4ZM49/zFImKgDqY5/fWXfo6FHVKURJmKMmy7xpW2lYRe8VtOl8rJP+AyKJr+mec
+UgDwQ+S4GAsBHvvyTjDCtWK5abkFJO0Apd7ctah8hD+7IGbyfJlLZvr0JiEepUch
+f36RcaT55yQcuhkxC+ocL0kfOuHUyDVxIsAhxxhAlpR7AzfY3O6i0JeL03vWbSaJ
+AHXFANqF6D0yPytxbUdn8AWvqT1uQaS6tYE0Agx/qRg9tuQbKZe6hjLg4s4jQUVc
+InN60IeKj2SlVl/rJPwb8tu6gWBsEjafj8/hKECFj2Pi2oR+VxLwv17XqR3uuTHF
+NxqZYWAlK5+fWYJAZFH5aC6qW6KJKZYvyVN8pzQj8n+ulpB/cTuRWFNxlYWA5BAL
+X505rwLx6t3+BENhx3+ZLXk2rMYdqQop5C0mVLuBaF4a9W9us8+B4EVSvgcENSQN
+uP+R5UI69/YUTqt5X3HVt4rrWrW47uMslX8wc8psqhhxldv6Roc0YjUCAwEAAQ==
+-----END RSA PUBLIC KEY-----
