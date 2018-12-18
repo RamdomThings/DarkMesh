@@ -20,7 +20,7 @@ cd docker-tinc
 docker build -t tinc:0.0.1 .
 ```
 
-## Generar el fichero de configuración de tu servidor
+## Generar el fichero de configuración de tu host
 ```bash
 cd /opt/darkmesh/
 docker run --rm -ti --name tinc --net=host --device=/dev/net/tun --cap-add NET_ADMIN -v /opt/darkmesh/conf/:/etc/tinc/darkmesh --entrypoint tincd tinc:0.0.1 -n darkmesh -K4096
@@ -41,8 +41,20 @@ LA CLAVE PUBLICA GENERADA ANTES
 estará en /opt/darkmesh/conf/rsa_key.pub
 Copia el contenido aqui
 -----END RSA PUBLIC KEY-----
+```
 
+### Comparte el fichero de tu host con el rersto de la red a través de git
+```bash
+cp hosts/MIHOST ~/workspace/darkmesh/hosts/MIHOST
+cd ~/workspace/darkmesh/
+git add hosts/MIHOST
+git commit "Here is Me trying to join to the darkmesh"
+git push
+```
 
+### Configura tu servidor 
+```bash
+cd /opt/darkmesh/
 vim tinc.conf
 
 Name=MINODO
@@ -56,10 +68,10 @@ TCPOnly = yes
 StrictSubnets=no
 ConnectTo=OTRONODOCONOCIDODELARED
 
-vim /root/tinc/etc/darkmesh/tinc-up
+vim tinc-up
 #!/bin/sh
 ifconfig $INTERFACE IPENDARKMESH netmask MASCARADELMESH
 
 
-docker run --rm -d --name tinc --net=host --device=/dev/net/tun --cap-add NET_ADMIN -v /root/tinc/etc/:/etc/tinc/ -v /root/etc/hosts:/etc/tinc/hosts  tinc:0.0.1  start -D -d 5 -n darkmesh
+docker run --rm -d --name tinc --net=host --device=/dev/net/tun --cap-add NET_ADMIN -v /opt/darkmesh/conf/:/etc/tinc/darkmesh tinc:0.0.1  start -D -d 5 -n darkmesh
 ``` 
