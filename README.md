@@ -5,7 +5,7 @@
 ```bash
 mkdir ~/workspace/
 cd ~/workspace/
-git clone ssh://git.darkme.sh:2222/millaguie/darkmesh.git
+git clone https://git.darkme.sh/darkmesh/darkmesh.git
 ```
 ## Copiar la configuración inicial a un directorio del servidor
 ```bash
@@ -15,18 +15,18 @@ cp -a darkmesh /opt/darkmesh
 ## Construir la imagen docker para tinc (no necesario si usas AMD64)
 ```bash
 cd ~/workspace/
-git clone https://github.com/millaguie/docker-tinc.git
+git clone https://git.darkme.sh/darkmesh/docker-tinc.git
 cd docker-tinc
 docker build -t tinc:0.0.1 .
 ```
 
-## Generar el fichero de configuración de tu host
+## Generar el fichero de configuración de tu nodo
 ```bash
 cd /opt/darkmesh/
 docker run --rm -ti --name tinc --net=host --device=/dev/net/tun --cap-add NET_ADMIN -v /opt/darkmesh/conf/:/etc/tinc/darkmesh --entrypoint tincd tinc:0.0.1 -n darkmesh -K4096
 
 
-vim hosts/MIHOST
+vim hosts/MINODO
 
 Address=DIRECCIONPUBLICA (cosa.midominio.net)
 Cipher=blowfish
@@ -45,9 +45,9 @@ Copia el contenido aqui
 
 ### Comparte el fichero de tu host con el rersto de la red a través de git
 ```bash
-cp hosts/MIHOST ~/workspace/darkmesh/hosts/MIHOST
+cp hosts/MINODO ~/workspace/darkmesh/hosts/MINODO
 cd ~/workspace/darkmesh/
-git add hosts/MIHOST
+git add hosts/MINODO
 git commit "Here is Me trying to join to the darkmesh"
 git push
 ```
