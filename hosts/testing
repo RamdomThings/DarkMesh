@@ -1,0 +1,21 @@
+Address=95.61.235.189
+Cipher=blowfish
+Compression=0
+Digest=sha1
+IndirectData=no
+Port=655
+Subnet=10.128.0.4/32
+TCPonly=yes
+-----BEGIN RSA PUBLIC KEY-----
+MIICCgKCAgEApy9MkcDpllmPwf+NrizOV9hqOBcZpGtIGyPK+d+K4r031czvP+Qs
+Qd0VxMqnWX0Ok0JpqlOEx0kqwlvydzFKjm0JJzhxEaNKQCX2ETA+2PKEowT0OE5u
+0w8y4+BBhDR84cpVeaaN1jckHObCgc7eG7TAV+j/7XMdKc4KPQ7lFT5HwN5jUdHM
+t8PuoPqwFqyTRdLyH++r7OwBphE5xeWp9YqWS68Nopgmf3vBBvjWwpCQk+wdwqMj
+u86CRgLgbml+3kpqRvtFeUCA3VlsOeNASjidabUOD3t21lx3ga52wQsJwnQpeDpN
+ZiQ6ltNunY1QopDOCK5UbYhdva3ZBoui+0HzinuwAUJNbFaEJlAPiXkiThnq4v3t
+9VHr6gUo7vOEdPHdH05aGiwRmpAR2YZqVmx6h8vmNSqN9iNdLFs2Xy/WgaZ1Cw0v
+0KVa9lZ7yrl9izli1URsAWxhtInFrY+KH7405URvCmUBP+OByQRIw3BwjjTPb1pY
+hZFjIIeFlKMQCVkXvKNShqIMLhB9s2IWEvJtcLI9qkPYCS6NxABIEINFw9nruft+
+6WQYHjmyHQ4lch9wHPuRKP7X87dm6V4B3oISH05j/p/CPOLaH63ABrm065p+PwCZ
+E6k8xk1lIsSoF08/Km7j/cjxrqu4k8qALc2xxsvFObLVnibrxXGspTUCAwEAAQ==
+-----END RSA PUBLIC KEY-----
