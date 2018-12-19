@@ -84,6 +84,6 @@ git push --set-upstream origin MIRAMAPARAUNIRMEALMESH
 ```
 Ahora puedes ir a https://git.darkme.sh/darkmesh/darkmesh/ y pedir pull :) es el momento de avisar a alguien con poderes de administración que compruebe la petición y si todo está bien, acepte el pull. También debe actualizar el directorio de hosts de OTRONODOCONOCIDODELARED para que puedas conectarte.
 ## Arranca el mesh
-
-docker run --rm -d --name darkmes --net=host --device=/dev/net/tun --cap-add NET_ADMIN -v /opt/darkmesh:/etc/tinc/darkmesh tinc:0.0.1  start -D -d 5 -n darkmesh
+```bash
+docker run --rm -d --name darkmes --net=host --device=/dev/net/tun --cap-add NET_ADMIN -v /opt/darkmesh:/etc/tinc/darkmesh tinc:0.0.1  -D -d 5 -n darkmesh
 ``` 
