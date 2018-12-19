@@ -4,6 +4,7 @@
 * Tener docker instalado en la raspberry, siguiendo por ejemplo esta documentación: https://docs.docker.com/install/linux/docker-ce/debian/ (recuerda que raspberry es armhf)
 * Estar dado de alta en https://git.darme.sh.
 * Subir tu llave ssh pública a https://git.darme.sh para poder usar git por ssh.
+* Pedir permiso para escribir en el repo
 * Haber pedido al grupo el direccionamiento a usar.
 * Contactar con algún otro nodo para que actualice sus hosts cuando subas el tuyo y así poderte conectar.
 
@@ -76,11 +77,12 @@ y solamente tengas que borrar estas líneas
 ```bash
 cp hosts/MINODO ~/workspace/darkmesh/hosts/MINODO
 cd ~/workspace/darkmesh/
+git checkout -b MIRAMAPARAUNIRMEALMESH
 git add hosts/MINODO
-git commit "Here is Me trying to join to the darkmesh"
-git push
+git commit -m "Aqui estoy intentando unirme al MESH"
+git push --set-upstream origin MIRAMAPARAUNIRMEALMESH
 ```
-
+Ahora puedes ir a https://git.darkme.sh/darkmesh/darkmesh/ y pedir pull :) es el momento de avisar a alguien con poderes de administración que compruebe la petición y si todo está bien, acepte el pull. También debe actualizar el directorio de hosts de OTRONODOCONOCIDODELARED para que puedas conectarte.
 ## Arranca el mesh
 
 docker run --rm -d --name darkmes --net=host --device=/dev/net/tun --cap-add NET_ADMIN -v /opt/darkmesh:/etc/tinc/darkmesh tinc:0.0.1  start -D -d 5 -n darkmesh
