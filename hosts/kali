@@ -1,0 +1,22 @@
+Address=95.61.235.189
+Cipher=blowfish
+Compression=0
+Digest=sha1
+IndirectData=no
+Port=655
+Subnet=10.128.0.5/32
+TCPonly=yes
+
+-----BEGIN RSA PUBLIC KEY-----
+MIICCgKCAgEApmRrWsgVvrf1l6D/eLKv5pB2fb9+Tg13WbnmhvZVKqmIEYjqteOP
+z8Fweh3nF8o7bgIpstGUA6iWZCGl/NDCG6ciZ6wy+dUXj4xhkVgcs/TIca18hDia
+UFXRKGJMhXeBOcJyf6mfm+GChbLB0VyoanodQn/zD8I0Aaz62OYl7vzwq/vRqMcU
+1mZk2jfARvC9KgX1Ks76DrJNdjM+evf8y4fmAs9bV6EsqrNchLI4+RdSxCo6/ifC
+BMzKP6u6WUpFp0sRLS5nuzcthJ0W69H7kaBGC408hWYsSTCh1jsk/aHC1cMOWnhH
+bPoUwxdaZNG8ivoYWCtTMy3Q+5R11yr3C7VVIDBvEKwpEe1cgPKgsnZqEkz68dak
+hmJYNG0GLwWw9CnXydujfd2TndyYgyLHKGvXRAb+cenNo9B4CC9BExdzPTaoZOly
+aYeXEc0VAqCuHUx447qd9X5PjgWJ1HD4xnvdgjUuLECnLecXoo2+2C+NwNI6Ws2V
+tFyv0THZHDJ5ACYKdj25W3hDvkW7m1ckCpJmD4vYVgzhLkHMMBCVedCj/B5PEqga
+e8EMEIYEkstI4ID/U9fR3VZvC/qs3ljFa0VU0s8+3aTj9P3Fm5XLRkKvpQUNCh7T
+bPF+ame230W3izhhhPwTY+SNtvKNjgGAdr/krgk9ljD/BmtiibPPdF0CAwEAAQ==
+-----END RSA PUBLIC KEY-----
