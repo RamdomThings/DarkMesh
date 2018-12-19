@@ -79,8 +79,8 @@ cp hosts/MINODO ~/workspace/darkmesh/hosts/MINODO
 cd ~/workspace/darkmesh/
 git checkout -b MIRAMAPARAUNIRMEALMESH
 git add hosts/MINODO
-git commit "Here is Me trying to join to the darkmesh"
-git push
+git commit -m "Aqui estoy intentando unirme al MESH"
+git push --set-upstream origin MIRAMAPARAUNIRMEALMESH
 ```
 Ahora puedes ir a https://git.darkme.sh/darkmesh/darkmesh/ y pedir pull :) es el momento de avisar a alguien con poderes de administración que compruebe la petición y si todo está bien, acepte el pull. También debe actualizar el directorio de hosts de OTRONODOCONOCIDODELARED para que puedas conectarte.
 ## Arranca el mesh
