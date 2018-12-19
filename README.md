@@ -34,7 +34,7 @@ chown TUUSUARIO:TUGRUPO /opt/darkmesh -R
 cd ~/workspace/
 git clone ssh://git@git.darkme.sh:2222/darkmesh/docker-tinc.git
 cd docker-tinc
-# El paso siguiente va a tardar un buen rato, tomate un algo
+# El paso siguiente va a tardar un buen rato, tomate un algo (con poderes de root)
 docker build -t tinc:0.0.1 . 
 ```
 
@@ -61,7 +61,7 @@ ifconfig $INTERFACE IPENDARKMESH netmask MASCARADELMESH
 ## Generar el fichero de configuración de tu nodo
 ```bash
 cd /opt/darkmesh/
-# cuando pregunte en el siguiente paso dile que si a las opciones por defecto
+# cuando pregunte en el siguiente paso dile que si a las opciones por defecto (con poderes de root)
 docker run --rm -ti --name tinc --net=host --device=/dev/net/tun --cap-add NET_ADMIN -v /opt/darkmesh:/etc/tinc/darkmesh --entrypoint tincd tinc:0.0.1 -n darkmesh -K4096
 
 
