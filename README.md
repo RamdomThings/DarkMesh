@@ -1,6 +1,7 @@
 
 # Conectarse a darkmesh (usando contenedores docker)
 ## Prerequisitos
+* Tener docker instalado en la raspberry, siguiendo por ejemplo esta documentación: https://docs.docker.com/install/linux/docker-ce/debian/ (recuerda que raspberry es armhf)
 * Estar dado de alta en https://git.darme.sh.
 * Subir tu llave ssh pública a https://git.darme.sh para poder usar git por ssh.
 * Haber pedido al grupo el direccionamiento a usar.
