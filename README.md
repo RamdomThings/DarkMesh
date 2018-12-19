@@ -3,22 +3,29 @@
 ## Prerequisitos
 * Tener docker instalado en la raspberry, siguiendo por ejemplo esta documentación: https://docs.docker.com/install/linux/docker-ce/debian/ (recuerda que raspberry es armhf)
 * Estar dado de alta en https://git.darme.sh.
-* Subir tu llave ssh pública a https://git.darme.sh para poder usar git por ssh.
+* Subir tu llave ssh pública a https://git.darme.sh para poder usar git por ssh. ( -t dsa da problemas)
 * Pedir permiso para escribir en el repo
 * Haber pedido al grupo el direccionamiento a usar.
 * Contactar con algún otro nodo para que actualice sus hosts cuando subas el tuyo y así poderte conectar.
 
 Nota, las palabras en mayúsculas como MINODO hacen referencia a "variables" han de ser cambiadas.
 
+## Configurar variables de git
+```bash
+git config --global user.email "Mi@email.com"
+git config --global user.name "Mi nombre" 
+```
 ## Llevar la configuración inicial a tu servidor
 ```bash
 mkdir ~/workspace/
 cd ~/workspace/
 git clone ssh://git@git.darkme.sh:2222/darkmesh/darkmesh.git
 ```
-## Copiar la configuración inicial a un directorio del servidor
+## Copiar la configuración inicial a un directorio del servidor (con poderes de root)
 ```bash
+mkdir /opt
 cp -a darkmesh /opt/darkmesh
+chown MIUSUARIO:MIGRUPO
 ```
 
 ## Construir la imagen docker para tinc (no necesario si usas AMD64)
@@ -26,7 +33,7 @@ cp -a darkmesh /opt/darkmesh
 cd ~/workspace/
 git clone ssh://git@git.darkme.sh:2222/darkmesh/docker-tinc.git
 cd docker-tinc
-# El paso siguiente va a tardar un buen rato, tomate un algo
+# El paso siguiente va a tardar un buen rato, tomate un algo (con poderes de root)
 docker build -t tinc:0.0.1 . 
 ```
 
@@ -53,7 +60,7 @@ ifconfig $INTERFACE IPENDARKMESH netmask MASCARADELMESH
 ## Generar el fichero de configuración de tu nodo
 ```bash
 cd /opt/darkmesh/
-# cuando pregunte en el siguiente paso dile que si a las opciones por defecto
+# cuando pregunte en el siguiente paso dile que si a las opciones por defecto (con poderes de root)
 docker run --rm -ti --name tinc --net=host --device=/dev/net/tun --cap-add NET_ADMIN -v /opt/darkmesh:/etc/tinc/darkmesh --entrypoint tincd tinc:0.0.1 -n darkmesh -K4096
 
 
@@ -83,7 +90,7 @@ git commit -m "Aqui estoy intentando unirme al MESH"
 git push --set-upstream origin MIRAMAPARAUNIRMEALMESH
 ```
 Ahora puedes ir a https://git.darkme.sh/darkmesh/darkmesh/ y pedir pull :) es el momento de avisar a alguien con poderes de administración que compruebe la petición y si todo está bien, acepte el pull. También debe actualizar el directorio de hosts de OTRONODOCONOCIDODELARED para que puedas conectarte.
-## Arranca el mesh
+## Arranca el mesh (con poderes de root)
 ```bash
 docker run --rm -d --name darkmes --net=host --device=/dev/net/tun --cap-add NET_ADMIN -v /opt/darkmesh:/etc/tinc/darkmesh tinc:0.0.1  -D -d 5 -n darkmesh
 ``` 
