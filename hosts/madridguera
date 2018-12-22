@@ -1,0 +1,21 @@
+Address=vidalio.millaguie.net
+Cipher=blowfish
+Compression=0
+Digest=sha1
+IndirectData=no
+Port=6699
+Subnet=10.128.253.1/24
+TCPonly=yes
+-----BEGIN RSA PUBLIC KEY-----
+MIICCgKCAgEAuPaR5JPDKqL3zAQte+ta9FdlsJpCNN9wOu0h+PKXt46G51BBURVz
+0prvyMNFPsNUT2GzQ17hP8QT3TKy7hYRP5zc2RNIfVKiUFmAvS2zSYdpTNpAg1/N
+GKZU8Pch3X5DtZbEU8NLIIvLoQGR1WBdktzvaiRvImyibYQeQgdG4bOShGZQHJX1
+rrCDqjuZeorgkQsm2idzIXGTwPj8aqjgLzlPCgW3dsbD7HMyV9T4XG7BvI/EtwnU
+GIeTZuf3aSsBreFycZgK3GOUb/Ztx9bVKIcQKtsQpErz/SiGg47hGP2xKNrbtnei
+AF//aIifExheW2s0580jjlkWwuL1S/5yfGt4WqbsrZD7ZpVg+HfgqXn0PBz6lmWf
+5Sk8g3auyHDvO8elXW2tn1n2whbrgDsf0lyYBIf2ek/iNu0xCO5Q5yNS25raqcsf
+/C2qByY6yodQ30qD1nLu9VcM5lI3AweCE8sHo2EDKAGFGKwWAB3MbJhFCRVoEtKS
+noChKv+jxRAE9yh6yD3Quf7Y1mxdfLTdgeDH0EBwPzdt0EXbz9rgYgd/U6iyNXqY
+/DC4qdrLIb8xyYoXAPvNbKiskuGeOT8uWqSuKZffRZJMR0v4SDYEbceZDw2X9hZU
+GqraUOXZ2mZBRC6CGJ0GYBv8pheLh5oCNzZzPGMNyFStc9ovEgJEhV8CAwEAAQ==
+-----END RSA PUBLIC KEY-----
