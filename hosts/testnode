@@ -1,0 +1,10 @@
+Address=51.15.204.236
+Cipher=blowfish
+Compression=0
+Digest=sha1
+IndirectData=no
+Port=655
+Subnet=10.128.0.250/32
+TCPonly=yes
+Ed25519PublicKey = s4NoO6NOFb4hfKWoXU6cFQxtUNPbrZbSfcYUXym+sFC
+
