@@ -93,6 +93,6 @@ Ahora puedes ir a https://git.darkme.sh/darkmesh/darkmesh/ y pedir pull :) es el
 
 ## Arranca el mesh (con poderes de root)
 ```bash
-docker run --rm -d --name darkmes --net=host --device=/dev/net/tun --cap-add NET_ADMIN -v /opt/darkmesh:/etc/tinc/darkmesh -e MESH=darkmesh -e GIT_URL="git.darkme.sh/darkmesh/darkmesh" tinc:1.1pre -D -d 5 -n darkmesh
+docker run --rm -d --name darkmes --net=host --device=/dev/net/tun --cap-add NET_ADMIN -v /opt/darkmesh:/etc/tinc/darkmesh -e MESH=darkmesh -e GIT_URL="git.darkme.sh/darkmesh/darkmesh" tinc:1.1pre
 ``` 
 Cada vez que reinicies el contenedor se conectará al servidor git para actualizar el listado de nodos.
