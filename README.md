@@ -58,6 +58,7 @@ ConnectTo=OTRONODOCONOCIDODELARED
 vim tinc-up
 #!/bin/sh
 ifconfig $INTERFACE IPENDARKMESH netmask 255.255.0.0
+```
 
 ## Generar el fichero de configuración de tu nodo
 ```bash
@@ -93,6 +94,7 @@ Ahora puedes ir a https://git.darkme.sh/darkmesh/darkmesh/ y pedir pull :) es el
 
 ## Arranca el mesh (con poderes de root)
 ```bash
-docker run --rm -d --name darkmes --net=host --device=/dev/net/tun --cap-add NET_ADMIN -v /opt/darkmesh:/etc/tinc/darkmesh -e MESH=darkmesh -e GIT_URL="git.darkme.sh/darkmesh/darkmesh" tinc:1.1pre
-``` 
+docker run --rm -d --name darkmesh --net=host --device=/dev/net/tun --cap-add NET_ADMIN -v /opt/darkmesh:/etc/tinc/darkmesh -e MESH=darkmesh -e GIT_URL="git.darkme.sh/darkmesh/darkmesh" tinc:1.1pre
+```
+
 Cada vez que reinicies el contenedor se conectará al servidor git para actualizar el listado de nodos.
