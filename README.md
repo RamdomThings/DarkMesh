@@ -35,7 +35,7 @@ cd ~/workspace/
 git clone ssh://git@git.darkme.sh:2222/darkmesh/docker-tinc.git
 cd docker-tinc
 # El paso siguiente va a tardar un buen rato, tomate un algo (con poderes de root)
-docker build -t tinc:0.0.1 . 
+docker build . -t tinc:1.1pre
 ```
 
 ## Configura tu servidor 
@@ -52,17 +52,18 @@ PingTimeout=60
 Mode=router
 TCPOnly = yes
 StrictSubnets=no
+ConnectTo=darkening
 ConnectTo=OTRONODOCONOCIDODELARED
 
 vim tinc-up
 #!/bin/sh
-ifconfig $INTERFACE IPENDARKMESH netmask MASCARADELMESH
+ifconfig $INTERFACE IPENDARKMESH netmask 255.255.0.0
 
 ## Generar el fichero de configuración de tu nodo
 ```bash
 cd /opt/darkmesh/
 # cuando pregunte en el siguiente paso dile que si a las opciones por defecto (con poderes de root)
-sudo docker run --rm -ti --name tinc --net=host --device=/dev/net/tun --cap-add NET_ADMIN -v /opt/darkmesh:/etc/tinc/darkmesh --entrypoint tincd tinc:0.0.1 -n darkmesh -K4096
+sudo docker run --rm -ti --name tinc --net=host --device=/dev/net/tun --cap-add NET_ADMIN -v /opt/darkmesh:/etc/tinc/darkmesh --entrypoint tinc tinc:1.1pre -n darkmesh generate-ed25519-keys
 
 vim hosts/MINODO
 
@@ -74,23 +75,24 @@ IndirectData=no
 Port=655
 Subnet=IPENDARKMESH/32
 TCPonly=yes
------BEGIN RSA PUBLIC KEY-----
-Probablemente la key publica se haya añadido automáticamente
-y solamente tengas que borrar estas líneas
------END RSA PUBLIC KEY-----
+Ed25519PublicKey = LaKeyApareceráAutomáticamenteAquíAlGenerarlaNoLacambies
 ```
 
 ## Comparte el fichero de tu host con el resto de nodos de la red a través de git
 ```bash
 cp hosts/MINODO ~/workspace/darkmesh/hosts/MINODO
 cd ~/workspace/darkmesh/
+# Cada vez que alguien sube a git una rama que se llama MIRAMAPARAUNIRMEALMESH dios mata a un gatito
 git checkout -b MIRAMAPARAUNIRMEALMESH
 git add hosts/MINODO
-git commit -m "Aqui estoy intentando unirme al MESH"
+git commit -m "Nuevo nodo MINODO con IP MIIP"
 git push --set-upstream origin MIRAMAPARAUNIRMEALMESH
 ```
-Ahora puedes ir a https://git.darkme.sh/darkmesh/darkmesh/ y pedir pull :) es el momento de avisar a alguien con poderes de administración que compruebe la petición y si todo está bien, acepte el pull. También debe actualizar el directorio de hosts de OTRONODOCONOCIDODELARED para que puedas conectarte.
+
+Ahora puedes ir a https://git.darkme.sh/darkmesh/darkmesh/ y pedir pull :) es el momento de avisar a alguien con poderes de administración que compruebe la petición y si todo está bien, acepte el pull. Automáticamente el nodo darkening se actualizará con el host nuevo.
+
 ## Arranca el mesh (con poderes de root)
 ```bash
-docker run --rm -d --name darkmes --net=host --device=/dev/net/tun --cap-add NET_ADMIN -v /opt/darkmesh:/etc/tinc/darkmesh tinc:0.0.1 -D -d 5 -n darkmesh
+docker run --rm -d --name darkmes --net=host --device=/dev/net/tun --cap-add NET_ADMIN -v /opt/darkmesh:/etc/tinc/darkmesh -e MESH=darkmesh -e GIT_URL="git.darkme.sh/darkmesh/darkmesh" tinc:1.1pre -D -d 5 -n darkmesh
 ``` 
+Cada vez que reinicies el contenedor se conectará al servidor git para actualizar el listado de nodos.
