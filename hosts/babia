@@ -1,0 +1,9 @@
+Address=babia.millaguie.net
+Cipher=blowfish
+Compression=0
+Digest=sha1
+IndirectData=no
+Port=655
+Subnet=10.128.0.6/32
+TCPonly=yes
+Ed25519PublicKey = vaGj7RKzS41xNqE3ldLjIuOTXLIjISgzgXoAU7Mey2J
